@@ -1,0 +1,22 @@
+# Binaries
+go-gateway
+*.exe
+*.test
+*.out
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime (local only)
+/sites/
+/sites/.runtime/
+
+# Env
+.env
