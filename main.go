@@ -38,14 +38,17 @@ func main() {
 	// Build HTTP routes
 	mux := http.NewServeMux()
 
-	// Dashboard
+	// Dashboard — serve embedded index.html
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/" {
 			http.NotFound(w, r)
 			return
 		}
-		handleDashboard(w, r, mgr)
+		serveIndex()(w, r)
 	})
+
+	// Static assets — serve embedded CSS, JS, etc.
+	mux.HandleFunc("/static/", serveStaticFile)
 
 	// API routes
 	mux.HandleFunc("/api/list", func(w http.ResponseWriter, r *http.Request) {

@@ -1,0 +1,108 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 2rem;
+  background: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.5;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+h1 {
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #21262d;
+  border-radius: 6px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* ── Table ───────────────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+th, td {
+  padding: 0.6rem 1rem;
+  border: 1px solid #30363d;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #161b22;
+  color: #8b949e;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #161b22;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.empty {
+  color: #8b949e;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ── API Section ─────────────────────────────────────────── */
+.api-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #30363d;
+}
+
+.api-section h2 {
+  color: #8b949e;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.api-docs {
+  color: #8b949e;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+code {
+  background: #21262d;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  color: #c9d1d9;
+}
+
+/* ── Error & Loading ─────────────────────────────────────── */
+.error-row td {
+  color: #f85149;
+  text-align: center;
+  padding: 2rem;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Web Gateway</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>AI Web Gateway</h1>
+    <p class="subtitle">
+      已部署 <strong id="project-count">—</strong> 个项目 &nbsp;|&nbsp;
+      SSL: <span class="tag" id="ssl-status">加载中...</span>
+    </p>
+  </header>
+
+  <main>
+    <table id="project-table">
+      <thead>
+        <tr>
+          <th>项目</th>
+          <th>类型</th>
+          <th>状态</th>
+          <th>访问地址</th>
+        </tr>
+      </thead>
+      <tbody id="project-rows">
+        <tr><td colspan="4" class="empty">加载中...</td></tr>
+      </tbody>
+    </table>
+
+    <section class="api-section">
+      <h2>API 端点</h2>
+      <p class="api-docs">
+        <code>GET  /api/list</code> — 列出所有部署<br>
+        <code>POST /api/{project}</code> — 上传 tar.gz 部署<br>
+        <code>GET  /api/{project}</code> — 查看状态与日志<br>
+        <code>POST /api/{project}/restart</code> — 重启后端<br>
+        <code>DELETE /api/{project}</code> — 删除项目<br>
+        <code>POST /api/ssl/upload</code> — 上传 SSL 证书<br>
+        <code>DELETE /api/ssl</code> — 移除 SSL 证书
+      </p>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

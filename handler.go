@@ -49,7 +49,15 @@ func handleList(w http.ResponseWriter, r *http.Request, mgr *Manager) {
 		return
 	}
 	projects := mgr.ListAll()
-	writeJSON(w, http.StatusOK, map[string]interface{}{"projects": projects, "count": len(projects)})
+	sslStatus := "未配置"
+	if mgr.nginx.HasSSL() {
+		sslStatus = "已启用"
+	}
+	writeJSON(w, http.StatusOK, map[string]interface{}{
+		"projects":   projects,
+		"count":      len(projects),
+		"ssl_status": sslStatus,
+	})
 }
 
 // handleProjectStatus returns status and logs for a project.
