@@ -4,6 +4,7 @@ FROM golang:1.24-alpine AS builder
 WORKDIR /build
 COPY go.mod ./
 COPY *.go ./
+COPY static/ ./static/
 RUN go mod tidy && CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /go-gateway .
 
 # Stage 2: Runtime
